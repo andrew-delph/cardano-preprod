@@ -1,0 +1,60 @@
+{
+  "$schema": "https://cips.cardano.org/cips/cip57/schemas/plutus-blueprint.json",
+  "$id": "https://github.com/aiken-lang/aiken/blob/main/examples/hello_world/plutus.json",
+  "$vocabulary": {
+    "https://json-schema.org/draft/2020-12/vocab/core": true,
+    "https://json-schema.org/draft/2020-12/vocab/applicator": true,
+    "https://json-schema.org/draft/2020-12/vocab/validation": true,
+    "https://cips.cardano.org/cips/cip57": true
+  },
+  "preamble": {
+    "version": "1.0.0",
+    "plutusVersion": "v2",
+    "description": "opshin 0.24.0 Smart Contract",
+    "title": "validator"
+  },
+  "validators": [
+    {
+      "title": "validator",
+      "redeemer": {
+        "title": "_",
+        "purpose": {
+          "oneOf": [
+            {
+              "oneOf": [
+                "spend",
+                "mint",
+                "withdraw",
+                "publish"
+              ]
+            }
+          ]
+        },
+        "schema": {
+          "anyOf": [
+            {
+              "dataType": "constructor",
+              "index": 3577940042,
+              "fields": [],
+              "title": "PlutusData"
+            },
+            {},
+            {
+              "dataType": "integer"
+            },
+            {
+              "dataType": "bytes"
+            },
+            {
+              "dataType": "list"
+            },
+            {},
+            {}
+          ]
+        }
+      },
+      "compiledCode": "5899010000323232232323232323374a90001bb1498c8cd4008010400492612232498c8c02040052410c48656c6c6f20776f726c64210013263357389201144e616d654572726f723a2076616c696461746f72004984c98cd5ce2481104e616d654572726f723a207072696e74004984c98cd5ce24810c4e616d654572726f723a205f004988c8cd5ce1802000801a80099ba548000dd8a4c40021",
+      "hash": "444191083ea786db22f86685f4df73041fb8a20d07d26090704b9d44"
+    }
+  ]
+}
